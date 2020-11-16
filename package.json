@@ -1,0 +1,30 @@
+{
+  "name": "apipdf",
+  "version": "1.0.0",
+  "description": "NodeJS API to create PDF using puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SPVVieira/apiPDF.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "PDF",
+    "creator",
+    "Puppeteer"
+  ],
+  "author": "Victor Vieira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SPVVieira/apiPDF/issues"
+  },
+  "homepage": "https://github.com/SPVVieira/apiPDF#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "puppeteer": "^5.4.1"
+  }
+}
