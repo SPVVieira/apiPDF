@@ -10,11 +10,27 @@ const toPDF = (async (dados) => {
     await page.goto(dados.url);
     await page.waitForTimeout(1000);
     var caminho = dados.local + '/' + dados.nomePDF + '.pdf';
-    await page.pdf({path: caminho, format: 'A4'});
-    await page.waitForTimeout(1000);
-    await page.close();
-    await browser.close();
-    return caminho;
+    await page.pdf({path: caminho, format: 'A4'}).then(async() => {
+        await page.waitForTimeout(1000);
+        await page.close();
+        await browser.close();
+        return {
+            'status': 1,
+            'mensagem': 'PDF gerado com sucesso',
+            'retorno': caminho
+        };
+    }).catch(async (err) => {
+        console.log(err);
+        await page.waitForTimeout(1000);
+        await page.close();
+        await browser.close();
+        return {
+            'status': 0,
+            'mensagem': 'Não foi possível gerar PDF',
+            'retorno': ''
+        };
+    });
+
 });
 
 module.exports = toPDF;

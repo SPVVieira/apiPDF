@@ -1,5 +1,5 @@
 # apiPDF
-NodeJS API to create PDF by a page using puppeteer
+A simple NodeJS API to create PDF by a page using puppeteer
 
 Install dependencies using "npm install";
 To use method POST you need to create a json with this format: 
